@@ -18,7 +18,7 @@ sequencesTextarea.addEventListener('keyup', function(event) {
   if (SEQUENCES_REGEX.test(sequencesTextarea.value)) {
     sequencesError.textContent = "";
   } else {
-    sequencesError.textContent = "Each sequence must only consist of A, C " +
+    sequencesError.textContent = "Each sequence must only consist of A, C, " +
       "T, and G.";
     return;
   }
