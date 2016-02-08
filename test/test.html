@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Oligo Editor Tests</title>
+
+    <link rel="stylesheet" href="css/mocha.css">
+    <style>#sequences, #results { display: none }</style>
+  </head>
+
+  <body>
+    <div id="mocha"></div>
+    <div id="messages"></div>
+    <div id="fixtures"></div>
+
+    <div id="sequences">
+      <textarea></textarea>
+      <span></span>
+    </div>
+
+    <div id="results">
+      <textarea></textarea>
+    </div>
+
+    <script src="js/mocha.js"></script>
+    <script src="js/chai.js"></script>
+
+    <script src="../js/script.js"></script>
+    <script>mocha.setup('bdd')</script>
+
+    <script src="js/script-test.js"></script>
+    <script>mocha.run();</script>
+  </body>
+</html>

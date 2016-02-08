@@ -1,9 +1,9 @@
 var SEQUENCES_REGEX = /^[atcg\r\n]*$/i;
 var BASE_PAIR_COMPLEMENT = {
-  'A': 'T',
-  'T': 'A',
-  'C': 'G',
-  'G': 'C'
+  'a': 't',
+  't': 'a',
+  'c': 'g',
+  'g': 'c'
 };
 
 var sequencesTextarea = document.querySelector('#sequences textarea');
@@ -11,7 +11,7 @@ var sequencesError = document.querySelector('#sequences span');
 var resultsTextarea = document.querySelector('#results textarea');
 var lastSequencesValue = '';
 
-sequences.addEventListener('keyup', function(event) {
+sequencesTextarea.addEventListener('keyup', function(event) {
   resultsTextarea.value = '';
 
   // ensure sequences are valid
@@ -25,35 +25,37 @@ sequences.addEventListener('keyup', function(event) {
 
   var sequences = sequencesTextarea.value.split(/\r?\n/);
   sequences.forEach(function(seq) {
-    var seqUpper = seq.toUpperCase()
-    var results = convertToOligoA(seqUpper) + "\n" +
-                  convertToOligoB(seqUpper) + "\n" +
-                  "---\n";
+    if (seq.length > 0) {
+      var seqLower = seq.toLowerCase()
+      var results = convertToOligoA(seqLower) + "\n" +
+                    convertToOligoB(seqLower) + "\n" +
+                    "---\n";
 
-    resultsTextarea.value += results;
+      resultsTextarea.value += results;
+    }
   });
 });
 
 /* Converts the given sequence to Oligo A form. */
 function convertToOligoA(seq) {
-  var startsWithG = seq[0] === 'G';
+  var startsWithG = seq[0] === 'g';
 
   if (startsWithG) {
-    return 'CACC' + seq.toLowerCase();
+    return 'CACC' + seq;
   } else {
-    return 'CACCG' + seq.toLowerCase();
+    return 'CACCG' + seq;
   }
 }
 
 /* Converts the given sequence to Oligo B form. */
 function convertToOligoB(seq) {
-  var startsWithG = seq[0] === 'G';
+  var startsWithG = seq[0] === 'g';
   var seqRC = reverseComplement(seq);
 
   if (startsWithG) {
-    return 'AAAC' + seqRC.toLowerCase();
+    return 'AAAC' + seqRC;
   } else {
-    return 'AAAC' + seqRC.toLowerCase() + 'C';
+    return 'AAAC' + seqRC + 'C';
   }
 }
 
