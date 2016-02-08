@@ -42,10 +42,10 @@ describe('Oligo Editor', function() {
     sequencesTextarea.value = 'tctttacttcaagtcgtttc\n' +
       'tctaggtacaacttttggca\n' +
       'acaattctaggtacaacttt\n' +
-      'gaaagtggctatgctcaaaa\n' +
-      'atgagagtaagaggaaggga\n' +
-      'atgaaatgaatgagagtaag\n' +
-      'aatgagagtaagaggaaggg\n';
+      'GAAAGTGGCTATGCTCAAAA\n' +
+      'ATGAGAGTAAGAGGAAGGGA\n' +
+      'ATGAAATGAATGAGAGTAAG\n' +
+      'AATGAGAGTAagaggaaggg\n';
 
     var event = new Event('keyup');
     sequencesTextarea.dispatchEvent(event);
