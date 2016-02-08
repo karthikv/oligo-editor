@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PX330 CRISPR Oligo Editor</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|Oswald:300">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div id="content">
+        <header>
+          <h1>PX330 CRISPR Oligo Editor</h1>
+        </header>
+
+        <div id="io-wrapper">
+          <div id="io" class="cf">
+            <div id="sequences">
+              <textarea></textarea>
+              <span></span>
+              <p>
+                Enter your sgRNA guide below in the 5'-3' direction. We'll add
+                restriction sites specific for PX330.
+              </p>
+            </div>
+
+            <div id="results">
+              <textarea></textarea>
+              <p>
+                There are two output lines for each sequence: one for Oligo
+                A and one for B, both in the 5'-3' direction.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <footer>
+          <p>Copyright &copy; 2016 Karthik &amp; Niraj</p>
+        </footer>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
